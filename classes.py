@@ -12,11 +12,11 @@ class Name(Field):
         self.name = name
 
     @property
-    def value(self):
+    def name(self):
         return self.__name
 
-    @value.setter
-    def value(self, name):
+    @name.setter
+    def name(self, name):
         if len(name) == 0 or name == None:
             raise ValueError(f'Name can\'t be empty!')
         self.__name = name
@@ -31,11 +31,11 @@ class Phone(Field):
         self.phone = phone
 
     @property
-    def value(self):
+    def phone(self):
         return self.__phone
 
-    @value.setter
-    def value(self, phone: str):
+    @phone.setter
+    def phone(self, phone: str):
         if not phone.isnumeric():
             raise ValueError('Phone contains unsupported characters')
         self.__phone = phone
@@ -50,11 +50,11 @@ class Birthday:
         self.birthday = birthday
 
     @property
-    def value(self):
+    def birthday(self):
         return self.__birthday
 
-    @value.setter
-    def value(self, birthday):
+    @birthday.setter
+    def birthday(self, birthday):
         if type(birthday) == tuple:
             raise ValueError(f'Birthday cant be in 2 dates')
         try:
